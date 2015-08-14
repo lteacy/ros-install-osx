@@ -49,17 +49,17 @@ do_install()
   fi
 
   # Check for pip packages in the system Python directory.
-  if [ $(ls /Library/Python/2.7/site-packages/ | wc -l) -gt 1 ]; then
-    echo "These instructions are about to install Python from Homebrew. However, there are already"
-    echo "pip packages installed against the system python, in the following path:"
-    echo
-    echo "    /Library/Python/2.7/site-packages/"
-    echo
-    echo "To proceed, please uninstall these packages:"
-    echo
-    echo "    pip freeze | xargs sudo pip uninstall -y"
-    exit 1
-  fi
+  #if [ $(ls /Library/Python/2.7/site-packages/ | wc -l) -gt 1 ]; then
+  #  echo "These instructions are about to install Python from Homebrew. However, there are already"
+  #  echo "pip packages installed against the system python, in the following path:"
+  #  echo
+  #  echo "    /Library/Python/2.7/site-packages/"
+  #  echo
+  #  echo "To proceed, please uninstall these packages:"
+  #  echo
+  #  echo "    pip freeze | xargs sudo pip uninstall -y"
+  #  exit 1
+  #fi
 
   # Check for root-owned stuff in /usr/local
   if [ $(find /usr/local/* -maxdepth 3 -type d -user root | wc -l) -gt 1 ]; then
